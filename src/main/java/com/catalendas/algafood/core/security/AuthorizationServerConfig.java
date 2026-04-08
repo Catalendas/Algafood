@@ -28,7 +28,7 @@ import java.util.Arrays;
 @Configuration
 public class AuthorizationServerConfig {
 
-//    @Bean
+    @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public SecurityFilterChain authFilterChain(HttpSecurity httpSecurity) throws Exception {
         OAuth2AuthorizationServerConfigurer authorizationServerConfigurer =
@@ -52,6 +52,7 @@ public class AuthorizationServerConfig {
                 .build();
     }
 
+    @Bean
     public RegisteredClientRepository registeredClientRepository(PasswordEncoder passwordEncoder) {
 
         RegisteredClient algafoodBackEnd = RegisteredClient
